@@ -2,9 +2,11 @@
 Maven Jar Deployer (mjard) is a command line tool to deploy orphan jar files to a maven repository, orphan meaning jars that are not present on any public maven repository but in har drive and need to be exposed in a maven repository in order to this dependencies to be used in a maven way.
 
 
-Usage: java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION] -d [JAR DIRS] -o [DEPENDENCIES OUPUT]
+## Usage:
+
+java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION] -d [JAR DIRS] -o [DEPENDENCIES OUPUT]
 	
-	-groupId			Specifies the maven group id to be 
+	-groupId		Specifies the maven group id to be 
 					used when generating the directory
 					Structure for the dependencies, for 
 					example the groupId "com.test.groupid"
@@ -14,7 +16,7 @@ Usage: java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION
 					the output path specified by the
 					-o argument
 					
-	-masterVersion			As some of the jars that could be 
+	-masterVersion	As some of the jars that could be 
 					found inside the directory where the
 					jars reside may have no version specified
 					on the file itself or his parent
@@ -43,3 +45,6 @@ Usage: java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION
 	-h				Displays this help, if this argument is 
 					present, no process will execute, this 
 					message will be then shown. 
+
+## Requirements:
+* This tool runs under java 8
