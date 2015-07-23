@@ -56,7 +56,9 @@ Given the following directory structure with jar files:
 |  |  +--- jar2.jar
 ```
 Execute: 
+```
 	java -jar mjd.jar -groupId com.test -masterVersion 1.0.0 -d orphan_jars -o output
+```
 knowing that:
 * groupId is the maven group id you want this dependencies to have when exported in maven format.
 * masterVersion is the default version you want your jars to have if a version pattern can't be found within the directories or jar files.
