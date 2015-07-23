@@ -83,6 +83,9 @@ Additional to that, in the output root it will be generated an example pom using
 
 You just need to copy the output directory content on the maven repository of your wish and the dependencies will then be available to use right away.
 
+### Notes:
+For the compiled and bundled version please use the jar placed at dist/ or you can build it yourself from source with mvn package this will generate a mjard-1.0.0-bundle.jar
+
 ### Requirements:
 * This tool runs under java 8
 
