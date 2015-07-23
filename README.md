@@ -81,5 +81,11 @@ That would result in:
 
 Additional to that, in the output root it will be generated an example pom using all the exporting dependencies to work as a template and facilitate using this dependencies in maven format.
 
+You just need to copy the output directory content on the maven repository of your wish and the dependencies will then be available to use right away.
+
 ### Requirements:
 * This tool runs under java 8
+
+### Disclaimer:
+This tool was made with the intent of walking a directory with several jars that are not present on an existing maven repository, naturaly if you just have a single jar to deploy to a maven repository it would be easier to use command line or the repository console, this just facilitate the labor when there are several jars in a directory that need to be published.
+The use of this tool is at your own discretion.
