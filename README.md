@@ -2,9 +2,9 @@
 Maven Jar Deployer (mjard) is a command line tool to deploy orphan jar files to a maven repository, orphan meaning jars that are not present on any public maven repository but in har drive and need to be exposed in a maven repository in order to this dependencies to be used in a maven way.
 
 
-## Usage:
+### Usage:
 
-java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION] -d [JAR DIRS] -o [DEPENDENCIES OUPUT]
+	java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION] -d [JAR DIRS] -o [DEPENDENCIES OUPUT]
 	
 	-groupId		Specifies the maven group id to be 
 					used when generating the directory
@@ -46,5 +46,40 @@ java - jar mjd.jar -groupId [THE GROUP ID] -masterVersion [MASTER VERSION] -d [J
 					present, no process will execute, this 
 					message will be then shown. 
 
-## Requirements:
+### Examples:
+Given the following directory structure with jar files:
+```
+.
++- orphan_jars
+|  +-- jar1.jar
+|  +-- jar2
+|  |  +--- jar2.jar
+```
+Execute: 
+	java -jar mjd.jar -groupId com.test -masterVersion 1.0.0 -d orphan_jars -o output
+knowing that:
+* groupId is the maven group id you want this dependencies to have when exported in maven format.
+* masterVersion is the default version you want your jars to have if a version pattern can't be found within the directories or jar files.
+* d is the directory where the jars to be exported are, note the tool was executed at the same level of this directory
+* o is the output directory for the jars in maven format to be placed
+
+That would result in:
+```
+.
++- output
+|  +-- com
+|  |  +--- test
+|  |  |  +---- jar1
+|  |  |	 |  +----- 1.0.0
+|  |  |  |  |  +------ jar1-1.0.0.jar
+|  |  |  |  |  +------ jar1-1.0.0.pom
+|  |  |  +---- jar2
+|  |  |	 |  +----- 1.0.0
+|  |  |  |  |  +------ jar2-1.0.0.jar
+|  |  |  |  |  +------ jar2-1.0.0.pom
+```
+
+Additional to that, in the output root it will be generated an example pom using all the exporting dependencies to work as a template and facilitate using this dependencies in maven format.
+
+### Requirements:
 * This tool runs under java 8
