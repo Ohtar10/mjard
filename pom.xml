@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.mjard</groupId>
-  <artifactId>mjard</artifactId>
+  <groupId>org.mjd</groupId>
+  <artifactId>mjd</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>maven-jar-deployer</name>
-  <url>https://github.com/Ohtar10/mjard</url>
+  <url>https://github.com/Ohtar10/mjd</url>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,7 +48,7 @@
 	          <manifest>
 	            <addClasspath>true</addClasspath>
 	            <classpathPrefix>lib/</classpathPrefix>
-	            <mainClass>org.mjard.maven.jar.deployer.MavenJarDeployer</mainClass>
+	            <mainClass>org.mjd.MavenJarDeployer</mainClass>
 	          </manifest>
 	        </archive>
 	      </configuration>
@@ -68,7 +68,7 @@
 	          <manifest>
 	            <addClasspath>true</addClasspath>
 	            <classpathPrefix>lib/</classpathPrefix>
-	            <mainClass>org.mjard.maven.jar.deployer.MavenJarDeployer</mainClass>
+	            <mainClass>org.mjd.MavenJarDeployer</mainClass>
 	          </manifest>
 	          </archive>
 		      <finalName>${project.artifactId}-${project.version}-bundle</finalName>
