@@ -86,7 +86,8 @@ Additional to that, in the output root it will be generated an example pom using
 You just need to copy the output directory content on the maven repository of your wish and the dependencies will then be available to use right away.
 
 ### Notes:
-For the compiled and bundled version please use the jar placed at dist/ or you can build it yourself from source with mvn package this will generate a mjd-1.0.0-bundle.jar
+* For the compiled and bundled version please use the jar placed at dist/ or you can build it yourself from source with mvn package this will generate a mjd-1.0.0-bundle.jar
+* The groupId and masterVersion arguments are only used if while walking the tree, the found directories and files the program is not able to discern a group id or version based on the original naming of the elements, in other words, this two arguments are just meant to ensure the exported dependencies has theses two properties in case the original jar doesn't have one or can't be understood.
 
 ### Requirements:
 * This tool runs under java 8
